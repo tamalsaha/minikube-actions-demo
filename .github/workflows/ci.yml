@@ -37,3 +37,7 @@ jobs:
     - name: Run a multi-line script
       run: |
         sudo ./hack/kubernetes/create-psp-cluster.sh
+        ls -l /var/lib/minikube/kubeconfig
+        cat /var/lib/minikube/kubeconfig
+        ls -l /home/runner/.kube
+        cat /home/runner/.kube/.minikube
