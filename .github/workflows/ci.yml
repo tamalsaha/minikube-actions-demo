@@ -32,6 +32,7 @@ jobs:
         sudo mkdir -p /usr/local/bin/
         sudo install minikube /usr/local/bin/
         minikube version
+        ls -la
 
     - name: Create PSP enabled Cluster
       run: |
@@ -39,8 +40,8 @@ jobs:
         ls -l /var/lib/minikube/kubeconfig
         cat /var/lib/minikube/kubeconfig
         sudo ls -l $HOME/.kube
-        cat $HOME/.kube/config
         sudo chown -R $USER $HOME/.kube
+        cat $HOME/.kube/config
 
     - name: Test local storage
       run: |
