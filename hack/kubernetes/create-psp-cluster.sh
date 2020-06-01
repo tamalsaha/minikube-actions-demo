@@ -23,4 +23,8 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/con
 
 kubectl apply -f ./hack/kubernetes/psp-rbac.yaml
 
-kubectl wait --for=condition=Ready pods -n kube-system --timeout=5m --all
+# kubectl wait --for=condition=Ready pods -n kube-system --timeout=5m --all
+
+echo "waiting for nodes to be ready ..."
+kubectl wait --for=condition=Ready nodes --all --timeout=5m
+kubectl get nodes
