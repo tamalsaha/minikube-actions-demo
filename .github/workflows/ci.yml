@@ -39,5 +39,6 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
-        sudo minikube start --driver=none
-        sudo kubectl version --short
+        # sudo minikube start --driver=none
+        # sudo kubectl version --short
+        sudo ./hack/kubernetes/psp/create-cluster.sh
