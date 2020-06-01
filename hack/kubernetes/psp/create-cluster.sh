@@ -22,6 +22,6 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/con
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/policy/restricted-psp.yaml
 
 echo ">>>>>>>>>>>>>>>>>>> L 23"
-kubectl apply -f ./cluster-roles.yaml
+kubectl apply -f ./hack/kubernetes/psp/cluster-roles.yaml
 echo ">>>>>>>>>>>>>>>>>>> L 25"
-kubectl apply -f ./role-bindings.yaml
+kubectl apply -f ./hack/kubernetes/psp/role-bindings.yaml
