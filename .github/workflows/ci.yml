@@ -44,10 +44,13 @@ jobs:
         cat $HOME/.kube/config
         kubectl version --short
 
+    - name: List pods
+      run: |
+        kubectl get pods --all-namespaces
+
     - name: Test local storage
       run: |
         kubectl apply -f ./hack/kubernetes/pod.yaml
-        kubectl get pods --all-namespaces
         sleep 10
         kubectl get pods
         sleep 10
