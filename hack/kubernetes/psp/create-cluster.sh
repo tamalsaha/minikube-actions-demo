@@ -4,6 +4,7 @@ set -xeou pipefail
 minikube start \
   --driver=none \
   --kubernetes-version=v1.18.3 \
+  --wait=none \
   --extra-config=apiserver.enable-admission-plugins="NamespaceLifecycle,LimitRanger,ServiceAccount,TaintNodesByCondition,Priority,DefaultTolerationSeconds,DefaultStorageClass,StorageObjectInUseProtection,PersistentVolumeClaimResize,RuntimeClass,CertificateApproval,CertificateSigning,CertificateSubjectRestriction,DefaultIngressClass,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy"
 
 echo "Waiting kubernetes to launch on 8443..."
