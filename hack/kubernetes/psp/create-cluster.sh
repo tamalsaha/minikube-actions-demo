@@ -6,8 +6,8 @@ minikube start \
   --kubernetes-version=v1.18.3 \
   --extra-config=apiserver.enable-admission-plugins="NamespaceLifecycle,LimitRanger,ServiceAccount,TaintNodesByCondition,Priority,DefaultTolerationSeconds,DefaultStorageClass,StorageObjectInUseProtection,PersistentVolumeClaimResize,RuntimeClass,CertificateApproval,CertificateSigning,CertificateSubjectRestriction,DefaultIngressClass,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,PodSecurityPolicy"
 
-echo "Waiting kubernetes to launch on 8080..."
-while ! nc -z localhost 8080; do
+echo "Waiting kubernetes to launch on 8443..."
+while ! nc -z localhost 8443; do
   sleep 1 # wait for 1/10 of the second before check again
 done
 sleep 5
