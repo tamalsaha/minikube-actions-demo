@@ -47,9 +47,30 @@ jobs:
     - name: Test local storage
       run: |
         kubectl apply -f ./hack/kubernetes/pod.yaml
+        kubectl get pods --all-namespaces
+        sleep 10
         kubectl get pods
-        sleep 5
+        sleep 10
         kubectl get pods
-        sleep 5
+        sleep 10
         kubectl get pods
-        sleep 5
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
+        sleep 10
+        kubectl get pods
