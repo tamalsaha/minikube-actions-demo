@@ -11,11 +11,9 @@ minikube start \
 
 echo "Waiting kubernetes to launch on 8443..."
 while ! nc -z localhost 8443; do
-  sleep 1 # wait for 1/10 of the second before check again
+  sleep 0.1 # wait for 1/10 of the second before check again
 done
 sleep 5
-
-kubectl version --short
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/policy/privileged-psp.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/policy/baseline-psp.yaml
@@ -28,3 +26,5 @@ kubectl apply -f ./hack/kubernetes/psp-rbac.yaml
 echo "waiting for nodes to be ready ..."
 kubectl wait --for=condition=Ready nodes --all --timeout=5m
 kubectl get nodes
+echo
+kubectl version --short
