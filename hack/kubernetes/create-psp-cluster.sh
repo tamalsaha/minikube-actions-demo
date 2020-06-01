@@ -22,3 +22,5 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/con
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/policy/restricted-psp.yaml
 
 kubectl apply -f ./hack/kubernetes/psp-rbac.yaml
+
+kubectl wait --for=condition=Ready pods -n kube-system --timeout=5m --all
