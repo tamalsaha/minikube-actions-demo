@@ -57,6 +57,8 @@ jobs:
         sleep 10
         kubectl get pods
         sleep 10
+        kubectl describe pods volume-test
+        sleep 5
         kubectl get pods
         sleep 10
         kubectl get pods
