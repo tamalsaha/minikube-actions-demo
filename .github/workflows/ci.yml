@@ -33,11 +33,20 @@ jobs:
         sudo install minikube /usr/local/bin/
         minikube version
 
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Create PSP enabled Cluster
       run: |
         sudo ./hack/kubernetes/create-psp-cluster.sh
         ls -l /var/lib/minikube/kubeconfig
         cat /var/lib/minikube/kubeconfig
         ls -l /home/runner/.kube
         cat /home/runner/.kube/.minikube
+
+    - name: Create PSP enabled Cluster
+      run: |
+        kubectl apply -f ./hack/kubernetes/pod.yaml
+        kubectl get pods
+        sleep 5
+        kubectl get pods
+        sleep 5
+        kubectl get pods
+        sleep 5
