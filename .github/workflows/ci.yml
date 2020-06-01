@@ -40,4 +40,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         sudo minikube start --driver=none
-        kubectl version --short
+        sudo kubectl version --short
