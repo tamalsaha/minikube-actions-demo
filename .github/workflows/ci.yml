@@ -38,8 +38,10 @@ jobs:
         sudo ./hack/kubernetes/create-psp-cluster.sh
         ls -l /var/lib/minikube/kubeconfig
         cat /var/lib/minikube/kubeconfig
-        ls -l /home/runner/.kube
-        cat /home/runner/.kube/.minikube
+        sudo ls -l /home/runner/.kube
+        # cat /home/runner/.kube/.minikube
+        sudo mv /home/runner/.kube /home/runner/.minikube $HOME
+        sudo chown -R $USER $HOME/.kube $HOME/.minikube
 
     - name: Create PSP enabled Cluster
       run: |
