@@ -40,8 +40,9 @@ jobs:
         ls -l /var/lib/minikube/kubeconfig
         cat /var/lib/minikube/kubeconfig
         sudo ls -l $HOME/.kube
-        sudo chown -R $USER $HOME/.kube
+        sudo chown -R $USER $HOME/.kube $HOME/.minikube
         cat $HOME/.kube/config
+        kubectl version --short
 
     - name: Test local storage
       run: |
